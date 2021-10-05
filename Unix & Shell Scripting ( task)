@@ -144,4 +144,27 @@ cat /var/log/system.log | grep -i  "ASL"
 
 #Exercise 4
 echo "string" | rev 
+
+#Exercise 1-Pipes
+ls -l | grep -i "r"
+or
+find -type.d -perm -u=r 
+
+#Exercise 1-Gwak
+    awk 'NR % 2 == 0' file1.txt > even.sh 
+    awk 'NR % 2 != 0' file1.txt > odd.sh
+
+#Exercise 2
+    awk 'END{ print NR }' random.txt 
+
+#Exercise 3
+ls -l /home/lab/workspace | awk '{sum+=$5; print }; END {print "\nSum of filesizes: " sum "\n"}'
+
+#Exercise 1- Sed
+sed '/^$/d' sed.sh
+sed '/^$/d' sed.sh > line.txt
+
+#Exercise 2
+ sed s/England/UK/g country.txt > newcountry.txt
+ 
     
