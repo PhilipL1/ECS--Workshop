@@ -62,3 +62,24 @@ echo "
         ;;
         * ) echo "You did not enter the correct varible in the list above"
     esac
+    
+    
+add_function_2 (){ 
+    local var1=$1
+    local var2=$2
+    sum=$(($var1+$var2))
+    echo $sum
+}
+
+add_function_1 $num1 $num2
+add_function_2 $num1 $num2
+
+#Exercise 1- Built-ins
+source /home/lab/workspace/exercise2.sh
+
+#Exercise 2
+if [[ exercise1.sh -nt exercise2.sh ]]; then
+  echo exercise1.sh is newer than exercise2.sh 
+else 
+echo exercise1.sh is  NOT newer than exercise2.sh
+fi
