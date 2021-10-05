@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# Exercise 1
+echo -n "Enter time (xx:xx) : "
+read text
+echo $text
+if [[ $text == "13:00" ]]; then 
+echo "lunch time"
+else 
+echo "get back to work"
+fi 
+
+# Exercise 2
+echo -n "Enter a sentence :"
+read string
+check=${#string}
+echo "sentence length:" $check
+if [ $check < 5 ]; then 
+echo "less than 5" ;  
+elif [$check => 5 && $check =<10]; then
+echo "between 5 & 10"
+else 
+echo "greater than 10"
+fi
+
+# Exercise 3
+echo "
+1.banana 
+2.Apple 
+3.Peach
+4.Grapes"
+    echo -n "Enter a number from 1-4 based on the lunch menu above :"
+    read menu
+    case $menu in
+        1 ) echo "You picked a Banana."
+        ;;
+        2 ) echo "You picked an Apple."
+        ;;
+        3 ) echo "You picked a Peach."
+        ;;
+        4 ) echo "You picked a Grapes."
+        ;;
+        * ) echo "You did not enter a number based on the lunch menu."
+    esac
+
+# Exercise 4
+    echo "
+1.banana 
+2.bike
+3.fortune
+4.sports"
+    echo -n "Enter the exact word above to find out your sentence :"
+    read sentence
+    case $sentence in
+        "banana" ) echo "You need to eat a banana every day "
+        ;;
+        "bike" ) echo "Cycling to work is a great start to a healthy lifestyle"
+        ;;
+        "fortune" ) echo "In the future you will find hapiness and sucess!!"
+        ;;
+        "sports" ) echo "You're favourite sport will be in the next socials"
+        ;;
+        * ) echo "You did not enter the correct varible in the list above"
+    esac
