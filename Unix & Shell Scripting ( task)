@@ -63,3 +63,85 @@ echo "
         * ) echo "You did not enter the correct varible in the list above"
     esac
     
+ #!/bin/bash
+
+#Exercise 1 - Loops
+length=0
+    while [ $length == 0 ]; do
+        echo "Enter anything"
+        read anything
+        length=${#anything}
+    done
+
+#Exercise 2
+time=$(date '+%M')
+finish_time=$((time+01))
+echo "$time is original "
+echo "$finish_time is new"
+count=0 
+until [ $time == $finish_time ]
+do
+    echo $count
+    ((count++))
+done
+
+#Exercise 1- Functions 
+characters_in_file () {
+      cat $1 | wc -w
+    }
+word_count=$(characters_in_file wordcount.txt)
+echo $word_count
+
+
+#Exercise 2
+echo -n "Enter a number :"
+read num1
+echo -n "Enter a number :"
+read num2
+
+add_function_1 (){ 
+    local var1=$1
+    local var2=$2
+    sum=$(($var1+$var2))
+    echo $sum
+}
+
+add_function_2 (){ 
+    local var1=$1
+    local var2=$2
+    sum=$(($var1+$var2))
+    echo $sum
+}
+
+add_function_1 $num1 $num2
+add_function_2 $num1 $num2
+
+#Exercise 1- Built-ins
+source /home/lab/workspace/exercise2.sh
+
+#Exercise 2
+if [[ exercise1.sh -nt exercise2.sh ]]; then
+  echo exercise1.sh is newer than exercise2.sh 
+else 
+echo exercise1.sh is  NOT newer than exercise2.sh
+fi
+
+#Exercise 1- Filters 
+   ## will join two files in stdout
+    echo "Hello" > file1.txt
+    echo "World" > file2.txt
+    cat file1.txt file2.txt
+
+
+    ## will join two files and put output into file
+cat file1.txt file2.txt > file_result.txt 
+
+#Exercise 2 
+echo happydaysssss | tr [:lower:] [:upper:]
+
+#Exercise 3
+cat /var/log/system.log | grep -i  "ASL"
+
+#Exercise 4
+echo "string" | rev 
+    
